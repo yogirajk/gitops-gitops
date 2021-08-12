@@ -13,7 +13,7 @@ pipeline {
   stages {
     stage ('Validate configuration resources') {
       steps {
-	sh 'oc apply --dry-run --validate -k config'
+	sh 'oc apply --dry-run=client --validate -k config'
       }
     }
     stage ('Apply resources') {
